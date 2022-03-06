@@ -1,0 +1,181 @@
+<div id="wrapper">
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <!-- Topbar -->
+            <app-navbar></app-navbar>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container">
+
+
+
+                <!-- Content Row -->
+                <div class="row">
+                    <div class="text-center my-3">
+                        <hr>
+                        <h1>Mis Productos</h1>
+                    </div>
+                    <!-- Earnings (Monthly) Card Example -->
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                            Producto uno</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <button class="btn btn-outline-warning mx-2">
+                                            Editar
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button class="btn btn-outline-danger">
+                                            Eliminar
+                                            <i class="bi bi-trash3"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Earnings (Monthly) Card Example -->
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-success shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                            Producto dos</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <button class="btn btn-outline-warning mx-2">
+                                            Editar
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button class="btn btn-outline-danger">
+                                            Eliminar
+                                            <i class="bi bi-trash3"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Pending Requests Card Example -->
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-warning shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                            Producto tres</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">$18,000</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <button class="btn btn-outline-warning mx-2">
+                                            Editar
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button class="btn btn-outline-danger">
+                                            Eliminar
+                                            <i class="bi bi-trash3"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content Row -->
+
+
+                <div>
+
+
+                    <div class="text-center">
+                        <hr>
+                        <h1>Añadir producto</h1>
+
+                    </div>
+
+                    <form class="row ">
+                        <div class="col-12 col-md-6">
+                            <label for="#" class="form-label">Nombre del producto</label>
+                            <input type="text" id="#" class="form-control">
+
+                            <label for="#" class="form-label mt-3">Categoria</label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control"
+                                    placeholder="Escriba la categoría y pulse añadir" aria-label="Recipient's username"
+                                    aria-describedby="button-addon2">
+                                <button class="btn btn-primary" type="button" id="button-addon2">Añadir</button>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label mt-2">Precio</label>
+                                <div class="form-group">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text">$</span>
+                                        <input type="text" class="form-control"
+                                            aria-label="Amount (to the nearest dollar)">
+                                        <span class="input-group-text">.00</span>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-12 col-md-6">
+
+
+                            <div class="form-group">
+                                <label for="formFile" class="form-label">Selecciona una foto del
+                                    producto</label>
+                                <input class="form-control" type="file" id="formFile">
+                            </div>
+
+
+
+                            <label for="comment">Descripción:</label>
+                            <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+
+
+                        </div>
+
+
+                    </form>
+
+
+                </div>
+                <div class="text-center my-4">
+                    <button type="submit" class="btn btn-primary">Agregar producto</button>
+                    <hr>
+                </div>
+            </div>
+            <!-- /.container-fluid -->
+        
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <app-footer></app-footer>
+        <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>
