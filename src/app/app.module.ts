@@ -11,6 +11,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { StoreComponent } from './components/store/store.component';
 import { NavbarStoreComponent } from './components/navbar-store/navbar-store.component';
+import { PayComponent } from './components/pay/pay.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { NavbarStoreComponent } from './components/navbar-store/navbar-store.com
     RegisterComponent,
     FooterComponent,
     StoreComponent,
-    NavbarStoreComponent
+    NavbarStoreComponent,
+    PayComponent
   ],
   imports: [
     BrowserModule,
