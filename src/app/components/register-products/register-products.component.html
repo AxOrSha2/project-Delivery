@@ -1,0 +1,35 @@
+<form [formGroup]="productForm" (ngSubmit)="productInfo()">
+    <div class="row g-3">
+        <div class="col">
+            <div class="form-floating">
+                <input id="name" type="text" formControlName="name" class="form-control" placeholder="placeholder">
+                <label for="name"> Nombre del producto </label>
+            </div>
+            <div class="form-floating">
+                <input id="supplier" type="text" formControlName="supplier" class="form-control" placeholder="placeholder">
+                <label for="supplier"> Nombre del proveedor </label>
+            </div>
+            <div class="form-floating">
+                <input id="price" type="number" formControlName="price" class="form-control" placeholder="placeholder">
+                <label for="price"> Valor del producto </label>
+            </div>
+            <div class="form-floating">
+                <input id="unitsAvailable" type="number" formControlName="unitsAvailable" class="form-control" placeholder="placeholder">
+                <label for="unitsAvailable"> Unidades disponibles del producto </label>
+            </div>
+        </div>
+        <div class="col">
+            <img [src]="image || 'assets/img/no-image.jpg'" class="rounded-circle img-thumbnail" alt="">
+            <input type="file" (change)="getFile($event)" class="btn btn-secondary mb-3 mt-3" accept="image/png, image/jpeg">
+            <div class="input-group">
+                <span class="input-group-text">Descripción</span>
+                <textarea formControlName="description" class="form-control" cols="15" rows="5"></textarea>
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success btn-lg px-5">
+        <i class="fa-regular fa-floppy-disk"></i>
+        Registrar formulario
+    </button>
+</form>
+

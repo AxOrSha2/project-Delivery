@@ -2,15 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, Subscriber } from 'rxjs';
-import { Producto } from 'src/app/models/producto';
-import { ProductoService } from 'src/app/services/producto.service';
+import { Product } from 'src/app/models/Product';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
-  selector: 'app-registrar-productos',
-  templateUrl: './registrar-productos.component.html',
-  styleUrls: ['./registrar-productos.component.css']
+  selector: 'app-register-products',
+  templateUrl: './register-products.component.html',
+  styleUrls: ['./register-products.component.css']
 })
-export class RegistrarProductosComponent implements OnInit {
+export class RegisterProductsComponent implements OnInit {
 
   productForm: FormGroup;
   form_title = 'Crear producto';
@@ -18,19 +18,21 @@ export class RegistrarProductosComponent implements OnInit {
   only_numbers = /^([0-9])*$/;
   image: string = "";
 
-  constructor(private fb: FormBuilder, private _productoService: ProductoService, private router: Router, private idProductPath: ActivatedRoute) {
+  constructor(private fb: FormBuilder, private _productoService: ProductService, private router: Router, private idProductPath: ActivatedRoute) { 
+
     this.productForm = this.fb.group({
-      nombre: ['', Validators.required],
-      descripcion: ['', Validators.required],
-      proveedor: ['', Validators.required],
-      precio: ['', [Validators.required, Validators.pattern(this.only_numbers)]],
-      unidadesDisponibles: ['', [Validators.required, Validators.pattern(this.only_numbers)]]
+      name:['',Validators.required],
+      description:['',Validators.required],
+      supplier:['',Validators.required],
+      price:['',[Validators.required, Validators.pattern(this.only_numbers)]],
+      unitsAvailable:['',[Validators.required, Validators.pattern(this.only_numbers)]]
     });
+
     this.id = this.idProductPath.snapshot.paramMap.get('id');
+
   }
 
   ngOnInit(): void {
-    this.getProductInfo()
   }
 
   getFile(event: any) {
@@ -64,18 +66,18 @@ export class RegistrarProductosComponent implements OnInit {
   }
 
   productInfo() {
-    const product_form: Producto = {
-      nombre: this.productForm.get('nombre')?.value,
+    const product_form: Product = {
+      name: this.productForm.get('name')?.value,
       img: this.image,
-      descripcion: this.productForm.get('descripcion')?.value,
-      proveedor: this.productForm.get('proveedor')?.value,
-      precio: this.productForm.get('precio')?.value,
-      unidadesDisponibles: this.productForm.get('unidadesDisponibles')?.value
+      description: this.productForm.get('description')?.value,
+      supplier: this.productForm.get('supplier')?.value,
+      price: this.productForm.get('price')?.value,
+      unitsAvailable: this.productForm.get('unitsAvailable')?.value
     }
 
     if (this.id === null) {
       //When the product is created
-      this._productoService.agregarProducto(product_form).subscribe(data=>{
+      this._productoService.createProduct(product_form).subscribe(data=>{
         this.router.navigate(['/']);
       },error=>{
         console.log(error)
@@ -83,7 +85,7 @@ export class RegistrarProductosComponent implements OnInit {
 
     } else {
       //When the product is updated
-      this._productoService.actualizarProducto(this.id,product_form).subscribe(data=>{
+      this._productoService.updateProduct(this.id,product_form).subscribe(data=>{
         this.router.navigate(['/']);
       },error=>{
         console.log(error)
@@ -95,14 +97,14 @@ export class RegistrarProductosComponent implements OnInit {
   getProductInfo() {
     if (this.id !== null) {
       this.form_title = 'Actualizar datos'
-      this._productoService.obtenerProducto(this.id).subscribe(data => {
+      this._productoService.findProduct(this.id).subscribe(data => {
         this.image = data.img
         this.productForm.setValue({
-          nombre: data.nombre,
-          descripcion: data.descripcion,
-          proveedor: data.proveedor,
-          precio: data.precio,
-          unidadesDisponibles: data.unidadesDisponibles
+          name: data.name,
+          description: data.description,
+          supplier: data.supplier,
+          price: data.price,
+          unitsAvailable: data.unitsAvailable
         })
       }, error => {
         console.log(error);

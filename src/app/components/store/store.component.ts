@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, Subscriber } from 'rxjs';
-import { Producto } from 'src/app/models/producto';
-import { ProductoService } from 'src/app/services/producto.service';
+import { Product } from 'src/app/models/Product';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-store',
@@ -10,30 +9,29 @@ import { ProductoService } from 'src/app/services/producto.service';
 })
 export class StoreComponent implements OnInit {
 
-  listaProductos: Producto[] = [];
+  productList: Product[] = [];
   shoppingCartList: any = [];
-  imgPath: string  = "";
 
-  constructor(private _productoService: ProductoService) { }
+  constructor(private _productService: ProductService) { }
 
   ngOnInit(): void {
-    this.obtenerProductos()
+    this.getProducts()
   }
 
-  obtenerProductos() {
-    this._productoService.obtenerProductos().subscribe(data =>{
-      this.listaProductos = data;
+  getProducts() {
+    this._productService.getProducts().subscribe(data =>{
+      this.productList = data;
     },error=>{
       console.log(error);
     })
   }
 
-  addToShoppingCart(idProducto: string, nombre: string, precio: number, unidadesDisponibles: number) {
+  addToShoppingCart(idProduct: string, name: string, price: number, unitsAvailable: number) {
     var eachProduct = {
-      idProducto: idProducto,
-      nombre: nombre,
-      precio: precio,
-      unidadesDisponibles: unidadesDisponibles
+      idProduct: idProduct,
+      name: name,
+      price: price,
+      unitsAvailable: unitsAvailable
     }
 
     this.shoppingCartList.push(eachProduct)

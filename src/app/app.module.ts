@@ -13,8 +13,8 @@ import { StoreComponent } from './components/store/store.component';
 import { NavbarStoreComponent } from './components/navbar-store/navbar-store.component';
 import { PayComponent } from './components/pay/pay.component';
 import { HttpClientModule } from '@angular/common/http';
-import { RegistrarProductosComponent } from './components/registrar-productos/registrar-productos.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RegisterProductsComponent } from './components/register-products/register-products.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     StoreComponent,
     NavbarStoreComponent,
     PayComponent,
-    RegistrarProductosComponent
+    RegisterProductsComponent
   ],
   imports: [
     BrowserModule,
