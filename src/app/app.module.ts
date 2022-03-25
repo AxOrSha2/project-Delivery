@@ -12,6 +12,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { StoreComponent } from './components/store/store.component';
 import { NavbarStoreComponent } from './components/navbar-store/navbar-store.component';
 import { PayComponent } from './components/pay/pay.component';
+import { HttpClientModule } from '@angular/common/http';
+import { RegistrarProductosComponent } from './components/registrar-productos/registrar-productos.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,11 +27,14 @@ import { PayComponent } from './components/pay/pay.component';
     FooterComponent,
     StoreComponent,
     NavbarStoreComponent,
-    PayComponent
+    PayComponent,
+    RegistrarProductosComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

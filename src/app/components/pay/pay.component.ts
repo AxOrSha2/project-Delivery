@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PayComponent implements OnInit {
 
+  shoppingCartList: any = [];
+
   constructor() { }
 
   ngOnInit(): void {
+    this.getUserCart();
+  }
+
+  getUserCart() {
+    //
+    this.shoppingCartList = JSON.parse(localStorage.getItem("shoppingCartItems") || '[]');
   }
 
 }

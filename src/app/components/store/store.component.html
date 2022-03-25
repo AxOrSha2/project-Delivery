@@ -22,11 +22,33 @@
                         <h1>Bienvenido</h1>
                     </div>
 
+
+                    <div *ngFor="let producto of listaProductos" class="col-xl-3 col-lg-4 col-md-6 col-12 mb-4 p-40">
+                        <div class="bg-grey rounded shadow-sm"><img [src]= " producto.img " alt="Lorem" class="img-fluid card-img-top img-store">
+                            <div class="p-4">
+                                <h4> <a href="#" class="text-dark"> {{ producto.nombre }}</a></h4>
+                                <p class="small text-muted mb-0"> {{ producto.descripcion }}
+                                </p>
+                                <p class="small text-muted mb-0"> {{ producto.precio | currency: 'COP' }}
+                                </p>
+                                <div class="d-flex align-items-center justify-content-center mt-4">
+                                    <!-- <a href="/pay" class="w-100"> -->
+                                    <a href="#" class="w-100">
+                                        <button class="btn btn-outline-primary rounded w-100" (click)="addToShoppingCart(producto._id, producto.nombre, producto.precio,producto.unidadesDisponibles)" >
+                                            Comprar
+											<i class="bi bi-bag-heart"></i>
+										</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Gallery item -->
                     <div class="col-xl-3 col-lg-4 col-md-6 col-12 mb-4 p-40">
                         <div class="bg-grey rounded shadow-sm"><img src="https://images.pexels.com/photos/8447293/pexels-photo-8447293.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Lorem" class="img-fluid card-img-top img-store">
                             <div class="p-4">
-                                <h4> <a href="#" class="text-dark">Red paint cup</a></h4>
+                                <h4> <a href="#" class="text-dark">Red paint cup Quemado </a></h4>
                                 <p class="small text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit
                                 </p>
                                 <div class="d-flex align-items-center justify-content-center mt-4">
