@@ -79,7 +79,7 @@ export class RegisterProductsComponent implements OnInit {
     if (this.id === null) {
       //When the product is created
       this._productoService.createProduct(product_form).subscribe(data=>{
-        // this.router.navigate(['/#']);
+        this.router.navigate(['/']);
         Swal.fire({
           icon: 'success',
           title: 'Dato guardado',
