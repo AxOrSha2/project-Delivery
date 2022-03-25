@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, Subscriber } from 'rxjs';
 import { Product } from 'src/app/models/Product';
 import { ProductService } from 'src/app/services/product.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register-products',
@@ -78,7 +79,12 @@ export class RegisterProductsComponent implements OnInit {
     if (this.id === null) {
       //When the product is created
       this._productoService.createProduct(product_form).subscribe(data=>{
-        this.router.navigate(['/']);
+        // this.router.navigate(['/#']);
+        Swal.fire({
+          icon: 'success',
+          title: 'Dato guardado',
+          text: 'El producto se ha creado correctamente'
+        })
       },error=>{
         console.log(error)
       })
@@ -86,7 +92,7 @@ export class RegisterProductsComponent implements OnInit {
     } else {
       //When the product is updated
       this._productoService.updateProduct(this.id,product_form).subscribe(data=>{
-        this.router.navigate(['/']);
+        // this.router.navigate(['/']);
       },error=>{
         console.log(error)
       })
