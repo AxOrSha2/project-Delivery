@@ -15,6 +15,7 @@ import { PayComponent } from './components/pay/pay.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RegistrarProductosComponent } from './components/registrar-productos/registrar-productos.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CarComponent } from './components/car/car.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     StoreComponent,
     NavbarStoreComponent,
     PayComponent,
-    RegistrarProductosComponent
+    RegistrarProductosComponent,
+    CarComponent
   ],
   imports: [
     BrowserModule,
