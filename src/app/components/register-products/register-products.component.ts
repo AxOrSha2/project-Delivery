@@ -26,7 +26,8 @@ export class RegisterProductsComponent implements OnInit {
       description:['',Validators.required],
       supplier:['',Validators.required],
       price:['',[Validators.required, Validators.pattern(this.only_numbers)]],
-      unitsAvailable:['',[Validators.required, Validators.pattern(this.only_numbers)]]
+      unitsAvailable:['',[Validators.required, Validators.pattern(this.only_numbers)]],
+      img:['',Validators.required]
     });
 
     this.id = this.idProductPath.snapshot.paramMap.get('id');
