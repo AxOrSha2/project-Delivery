@@ -1,56 +1,14 @@
-<!-- <form [formGroup]="productForm" (ngSubmit)="productInfo()">
-    <div class="row g-3">
-        <div class="col">
-            <div class="form-floating">
-                <input id="name" type="text" formControlName="name" class="form-control" placeholder="placeholder">
-                <label for="name"> Nombre del producto </label>
-            </div>
-            <div class="form-floating">
-                <input id="supplier" type="text" formControlName="supplier" class="form-control" placeholder="placeholder">
-                <label for="supplier"> Nombre del proveedor </label>
-            </div>
-            <div class="form-floating">
-                <input id="price" type="number" formControlName="price" class="form-control" placeholder="placeholder">
-                <label for="price"> Valor del producto </label>
-            </div>
-            <div class="form-floating">
-                <input id="unitsAvailable" type="number" formControlName="unitsAvailable" class="form-control" placeholder="placeholder">
-                <label for="unitsAvailable"> Unidades disponibles del producto </label>
-            </div>
-        </div>
-        <div class="col">
-            <img [src]="image || 'assets/img/no-image.jpg'" class="rounded-circle img-thumbnail" alt="">
-            <input type="file" (change)="getFile($event)" class="btn btn-secondary mb-3 mt-3" accept="image/png, image/jpeg">
-            <div class="input-group">
-                <span class="input-group-text">Descripción</span>
-                <textarea formControlName="description" class="form-control" cols="15" rows="5"></textarea>
-            </div>
-        </div>
-    </div>
-    <button type="submit" class="btn btn-success btn-lg px-5">
-        <i class="fa-regular fa-floppy-disk"></i>
-        Registrar formulario
-    </button>
-</form> -->
-
 <form [formGroup]="productForm" (ngSubmit)="productInfo()" class="row ">
     <div class="col-12 col-md-6">
         <label for="name" class="form-label">Nombre del producto</label>
         <input type="text" id="name" class="form-control" formControlName="name">
-
-        <!-- <label for="#" class="form-label mt-3">Categoria</label>
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Escriba la categoría y pulse añadir" aria-label="Recipient's username" aria-describedby="button-addon2">
-            <button class="btn btn-primary" type="button" id="button-addon2">Añadir</button>
-        </div> -->
 
 
         <div class="form-group">
             <label for="price" class="form-label mt-2">Precio</label>
             <div class="input-group mb-3">
                 <span class="input-group-text">$</span>
-                <input id="price" type="text" class="form-control" aria-label="Amount (to the nearest dollar)"
-                    formControlName="price">
+                <input id="price" type="text" class="form-control" aria-label="Amount (to the nearest dollar)" formControlName="price" required>
                 <span class="input-group-text">.00</span>
             </div>
 
@@ -59,7 +17,7 @@
 
         <div class="form-group">
             <label for="comment">Descripción:</label>
-            <textarea class="form-control" rows="5" id="comment" name="text" formControlName="description"></textarea>
+            <textarea class="form-control" rows="5" id="comment" name="text" formControlName="description" required></textarea>
         </div>
 
 
@@ -68,34 +26,31 @@
     <div class="col-12 col-md-6">
 
 
-        <img [src]="image || 'assets/img/no-image.jpg'" class="img-thumbnail" alt="">
+        <img [src]="image || 'assets/img/no-image.jpg'" class="img-thumbnail w-50" alt="">
 
 
         <div class="form-group">
             <label for="formFile" class="form-label">Selecciona una foto del
                 producto</label>
-            <input class="form-control" type="file" id="formFile" (change)="getFile($event)"
-                accept="image/png, image/jpeg">
+            <input class="form-control" type="file" id="formFile" (change)="getFile($event)" accept="image/png, image/jpeg" required>
         </div>
 
 
         <div class="form-group">
             <label for="unitsAvailable"> Unidades disponibles del producto </label>
-            <input id="unitsAvailable" type="number" formControlName="unitsAvailable" class="form-control"
-                placeholder="placeholder">
+            <input id="unitsAvailable" type="number" formControlName="unitsAvailable" class="form-control" placeholder="placeholder" required>
         </div>
 
         <div class="form-group">
             <label for="supplier"> Nombre del proveedor </label>
-            <input id="supplier" type="text" formControlName="supplier" class="form-control" placeholder="placeholder">
+            <input id="supplier" type="text" formControlName="supplier" class="form-control" placeholder="placeholder" required>
         </div>
 
 
     </div>
 
-    <div class="text-center my-4">
-        <button type="submit" class="btn btn-primary">Agregar producto</button>
-        <hr>
-    </div>
+    <button type="submit" class="btn btn-primary text-center my-4">Agregar producto</button>
+    <hr>
+
 
 </form>
