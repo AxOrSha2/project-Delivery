@@ -11,6 +11,7 @@ import Swal from 'sweetalert2';
 export class HomeComponent implements OnInit {
 
   productList: Product[] = [];
+  loadingData: boolean = true;
 
   constructor(private _productService: ProductService) { }
 
@@ -20,7 +21,10 @@ export class HomeComponent implements OnInit {
 
   getProducts() {
     this._productService.getProducts().subscribe(data => {
-      this.productList = data;
+      if (data) {
+        this.loadingData = false
+        this.productList = data;
+      }
     }, error => { 
       console.log(error)
     })
