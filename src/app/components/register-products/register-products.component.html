@@ -58,17 +58,13 @@
         <div class="form-group">
             <label for="supplier"> Nombre del proveedor </label>
             <input id="supplier" type="text" formControlName="supplier" class="form-control" placeholder="placeholder">
-            <p class="fw-bold text-danger" *ngIf="productForm.get('supplier')?.hasError('required') && productForm.get('supplier')?.touched">
-                Agregue un proveedor
-            </p>
         </div>
 
 
-    </div>
 
-    <div class="text-center my-4">
-        <button type="submit" class="btn btn-primary" [disabled]="productForm.invalid">Agregar producto</button>
-        <hr>
-    </div>
+        <div class="text-center my-4">
+            <button type="submit" class="btn btn-primary" [disabled]="productForm.invalid">Agregar producto</button>
+            <hr>
+        </div>
 
 </form>
