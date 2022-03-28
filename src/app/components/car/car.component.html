@@ -1,9 +1,9 @@
-<a href="/pay">
+<a [routerLink]="['/pay']">
     <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true" id="car">
         <div class="toast-header">
             <strong class="me-auto">Carrito de compras <i class="bi bi-cart-plus"></i></strong>
 
-            <small>0 productos</small>
+            <small>{{ totalProducts }} Producto(s)</small>
 
         </div>
         <div class="toast-body">

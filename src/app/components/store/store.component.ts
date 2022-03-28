@@ -27,16 +27,17 @@ export class StoreComponent implements OnInit {
   }
 
   addToShoppingCart(idProduct: string, name: string, price: number, unitsAvailable: number) {
+    this.shoppingCartList = JSON.parse(localStorage.getItem("shoppingCartItems") || '[]');
+    
     var eachProduct = {
       idProduct: idProduct,
       name: name,
       price: price,
       unitsAvailable: unitsAvailable
     }
-
+    
     this.shoppingCartList.push(eachProduct)
     localStorage.setItem('shoppingCartItems',JSON.stringify(this.shoppingCartList));
-
   }
 
 }
