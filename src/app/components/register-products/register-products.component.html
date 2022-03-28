@@ -18,18 +18,14 @@
                 El precio es requerido
             </p>
         </div>
-        
-        
+
+
         <div class="form-group">
             <label for="comment">Descripción:</label>
-<<<<<<< HEAD
-            <textarea class="form-control" rows="5" id="comment" name="text" formControlName="description" required></textarea>
-=======
             <textarea class="form-control" rows="5" id="comment" name="text" formControlName="description"></textarea>
             <p class="fw-bold text-danger" *ngIf="productForm.get('description')?.hasError('required') && productForm.get('description')?.touched">
                 Agregue una descripción
             </p>
->>>>>>> 087102a59c70efd25e68bc3997f424a6f27ec447
         </div>
 
 
@@ -44,53 +40,35 @@
         <div class="form-group">
             <label for="formFile" class="form-label">Selecciona una foto del
                 producto</label>
-<<<<<<< HEAD
-            <input class="form-control" type="file" id="formFile" (change)="getFile($event)" accept="image/png, image/jpeg" required>
-=======
             <input class="form-control" type="file" id="formFile" (change)="getFile($event)" formControlName="img" accept="image/png, image/jpeg">
             <p class="fw-bold text-danger" *ngIf="productForm.get('img')?.hasError('required') && productForm.get('img')?.touched">
                 Agregue una imagen
             </p>
->>>>>>> 087102a59c70efd25e68bc3997f424a6f27ec447
         </div>
 
 
         <div class="form-group">
             <label for="unitsAvailable"> Unidades disponibles del producto </label>
-<<<<<<< HEAD
-            <input id="unitsAvailable" type="number" formControlName="unitsAvailable" class="form-control" placeholder="placeholder" required>
-=======
             <input id="unitsAvailable" type="number" formControlName="unitsAvailable" class="form-control" placeholder="Unidades del producto">
             <p class="fw-bold text-danger" *ngIf="productForm.get('unitsAvailable')?.hasError('required') && productForm.get('unitsAvailable')?.touched">
                 Agregue las unidades disponibles
             </p>
->>>>>>> 087102a59c70efd25e68bc3997f424a6f27ec447
         </div>
 
         <div class="form-group">
             <label for="supplier"> Nombre del proveedor </label>
-<<<<<<< HEAD
-            <input id="supplier" type="text" formControlName="supplier" class="form-control" placeholder="placeholder" required>
-=======
             <input id="supplier" type="text" formControlName="supplier" class="form-control" placeholder="placeholder">
             <p class="fw-bold text-danger" *ngIf="productForm.get('supplier')?.hasError('required') && productForm.get('supplier')?.touched">
                 Agregue un proveedor
             </p>
->>>>>>> 087102a59c70efd25e68bc3997f424a6f27ec447
         </div>
 
 
     </div>
 
-<<<<<<< HEAD
-    <button type="submit" class="btn btn-primary text-center my-4">Agregar producto</button>
-    <hr>
-
-=======
     <div class="text-center my-4">
         <button type="submit" class="btn btn-primary" [disabled]="productForm.invalid">Agregar producto</button>
         <hr>
     </div>
->>>>>>> 087102a59c70efd25e68bc3997f424a6f27ec447
 
 </form>
