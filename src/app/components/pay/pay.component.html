@@ -23,8 +23,9 @@
                                 <div class="h5 mb-0 font-weight-bold text-gray-800"> {{ product.price | currency: 'COP'
                                     }} x 1 </div>
                             </div>
-                            <div class="col-auto">
-                                <button class="btn btn-outline-warning mx-2">
+                            
+                            <div class="col-auto mt-2">
+                                <button class="btn btn-outline-warning mx-2 ">
                                     Editar
                                     <i class="bi bi-pencil"></i>
                                 </button>
@@ -42,8 +43,18 @@
                 <h3>Total: {{ totalShopping | currency:'COP' }}</h3>
                 <hr>
                 <div class="col-auto">
+
+                    <a [routerLink]="['/']">
+                        <button class="btn btn-outline-warning mx-2 shadow">
+                            Volver al catalogo
+                            <i class="bi bi-arrow-90deg-left"></i>                       
+                        </button>
+                    </a>
+                    <hr>
+                </div>
+                <div class="col-auto">
                     <button class="btn btn-outline-danger" (click)="cleanShoppingCart()">
-                        Cancelar
+                        Cancelar pedido
                         <i class="bi bi-trash3"></i>
                     </button>
                     <a href="https://api.whatsapp.com/send/?phone=919988776655&text&app_absent=0" target="_blank">

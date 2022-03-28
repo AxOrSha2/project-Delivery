@@ -20,18 +20,28 @@
                 <div class="row">
                     <div class="text-center my-3">
 
-                        <h1>Bienvenido</h1>
+                        <h1>Bienvenido al Catalogo</h1>
                     </div>
 
 
                     <div *ngFor="let product of productList" class="col-xl-3 col-lg-4 col-md-6 col-12 mb-4 p-40">
-                        <div class="bg-grey rounded shadow-sm"><img [src]=" product.img " alt="Lorem" class="img-fluid card-img-top img-store">
+                        <div class="bg-grey rounded shadow-lg"><img [src]=" product.img " alt="Lorem" class="img-fluid card-img-top img-store">
                             <div class="p-4">
                                 <h4> <a class="text-dark"> {{ product.name }}</a></h4>
-                                <p class="small text-muted mb-0"> {{ product.description }}
+                                
+                                <p class="text-muted mb-2"> {{ product.description }}
                                 </p>
-                                <p class="small text-muted mb-0"> {{ product.price | currency: 'COP' }}
-                                </p>
+
+
+                                <ul class="list-group">
+
+                                    <li class="list-group-item text-center">
+                                        {{ product.price | currency: 'COP $'}}
+                                        
+                                    </li>
+                                </ul>
+
+                                
                                 <div class="d-flex align-items-center justify-content-center mt-4">
                                     <!-- <a href="/pay" class="w-100"> -->
                                     <a class="w-100">
