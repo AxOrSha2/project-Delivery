@@ -19,7 +19,12 @@ export class RegisterProductsComponent implements OnInit {
   only_numbers = /^([0-9])*$/;
   image: string = "";
 
-  constructor(private fb: FormBuilder, private _productoService: ProductService, private router: Router, private idProductPath: ActivatedRoute) { 
+  constructor(
+    private fb: FormBuilder, 
+    private _productoService: ProductService, 
+    private router: Router, 
+    private idProductPath: ActivatedRoute
+  ) { 
 
     this.productForm = this.fb.group({
       name:['',Validators.required],
@@ -29,7 +34,6 @@ export class RegisterProductsComponent implements OnInit {
       unitsAvailable:['',[Validators.required, Validators.pattern(this.only_numbers)]],
       img:['',Validators.required]
     });
-
     this.id = this.idProductPath.snapshot.paramMap.get('id');
 
   }
