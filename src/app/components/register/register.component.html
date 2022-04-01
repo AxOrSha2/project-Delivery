@@ -15,33 +15,37 @@
                                 </div>
                                 <h1 class="h4 text-gray-900 mb-4">Crea una cuenta</h1>
                             </div>
-                            <form class="user">
+                            <form class="user" [formGroup]="UserForm" (ngSubmit)="singUp()">
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Nombre">
+                                        <input type="text" class="form-control form-control-user" id="exampleFirstName" formControlName="name"  placeholder="Nombre del negocio" autofocus>
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Nombre de tu negocio">
+                                        <input type="email" class="form-control form-control-user" id="exampleLastName" formControlName="email" placeholder="Correo eléctronico">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Correo eléctronico">
+                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail" formControlName="password" placeholder="Contraseña">
                                 </div>
                                 <div class="form-group">
-                                    <input type="number" class="form-control form-control-user" id="exampleInputEmail" placeholder="Numero de whatsapp">
+                                    <input type="number" class="form-control form-control-user" id="exampleInputEmail" formControlName="cellphone" placeholder="Numero de whatsapp">
                                 </div>
 
-                                <a href="/login" class="btn btn-primary btn-user btn-block">
+                                <button type="submit" class="btn btn-primary btn-user btn-block" [disabled]="UserForm.invalid">
                                     Registrar
-                                </a>
+                                </button>
+
+                                <!-- <a href="/login" class="btn btn-primary btn-user btn-block">
+                                    Registrar
+                                </a> -->
 
                             </form>
                             <hr>
                             <div class="text-center">
-                                <a class="small" href="/forgot-password">Olvidé mi constraseña</a>
+                                <a class="small" [routerLink]="['/forgot-password']">Olvidé mi constraseña</a>
                             </div>
                             <div class="text-center">
-                                <a class="small" href="/login">Ya tengo una cuenta</a>
+                                <a class="small" [routerLink]="['/login']">Ya tengo una cuenta</a>
                             </div>
                         </div>
                     </div>

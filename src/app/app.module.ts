@@ -17,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterProductsComponent } from './components/register-products/register-products.component';
 import { CarComponent } from './components/car/car.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,9 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

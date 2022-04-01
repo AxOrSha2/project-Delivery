@@ -20,6 +20,43 @@ const routes: Routes = [
   {path: '', component: StoreComponent},
   {path: 'pay', component: PayComponent},
   {path: 'landing', component: LandingPageComponent}
+  
+import { AuthGuard } from './auth.guard';
+
+const routes: Routes = [
+  {
+    path: 'login', 
+    component: LoginComponent
+  },
+  {
+    path: 'admin', 
+    component: HomeComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'forgot-password', 
+    component: ForgotPasswordComponent
+  },
+  {
+    path: 'register', 
+    component: RegisterComponent
+  },
+  {
+    path: 'create-product', 
+    component: RegisterProductsComponent
+  },
+  {
+    path: 'alter-product/:id', 
+    component: RegisterProductsComponent
+  },
+  {
+    path: '', 
+    component: StoreComponent
+  },
+  {
+    path: 'pay', 
+    component: PayComponent
+  }
 ];
 
 @NgModule({

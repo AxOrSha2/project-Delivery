@@ -8,7 +8,14 @@ export class Product {
     price: number;
     unitsAvailable: number;
 
-    constructor(name: string, img: string, description: string, supplier: string, price: number, unitsAvailable: number) {
+    constructor(
+        name: string, 
+        img: string, 
+        description: string, 
+        supplier: string, 
+        price: number, 
+        unitsAvailable: number
+    ) {
         this.name = name;
         this.img = img;
         this.description = description;
