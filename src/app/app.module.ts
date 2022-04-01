@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterProductsComponent } from './components/register-products/register-products.component';
 import { CarComponent } from './components/car/car.component';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { CarComponent } from './components/car/car.component';
     NavbarStoreComponent,
     PayComponent,
     RegisterProductsComponent,
-    CarComponent
+    CarComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,
