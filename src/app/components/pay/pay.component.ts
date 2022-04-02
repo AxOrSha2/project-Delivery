@@ -11,6 +11,10 @@ export class PayComponent implements OnInit {
 
   shoppingCartList: any = [];
   totalShopping: number = 0;
+  messageText: string = "";
+  phoneUser: string = "";
+  urlWhastapp: string = "https://wa.me";
+  url: string = "";
 
   constructor(private router: Router) { }
 
@@ -50,4 +54,11 @@ export class PayComponent implements OnInit {
     })
   }
 
+  sendMessageWhatsapp() {
+     this.messageText = "Hola usuario esta es la lista de productos que usted acaba de seleccionar para efectuar la compra en TRUEKI";
+     this.phoneUser = "+573045811471";
+
+     this.url = `${this.urlWhastapp}/${this.phoneUser}?text=${this.messageText.replace(/\s/g, '%20')}`;
+     /* console.log(url) */
+  }
 }
