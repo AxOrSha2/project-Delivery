@@ -55,10 +55,23 @@ export class PayComponent implements OnInit {
   }
 
   sendMessageWhatsapp() {
-     this.messageText = "Hola usuario esta es la lista de productos que usted acaba de seleccionar para efectuar la compra en TRUEKI";
-     this.phoneUser = "+573045811471";
+    //Vanilla message
+    this.messageText = "*¡Hola, vengo de Trueki!*\n\nEsta es la lista de compras:\n";
 
-     this.url = `${this.urlWhastapp}/${this.phoneUser}?text=${this.messageText.replace(/\s/g, '%20')}`;
-     /* console.log(url) */
+    //Create a message foreach product
+    this.shoppingCartList.forEach((element: { name: string; price: number;}) => {
+      this.messageText += `\n - ${element.name} x 1 : COP ${element.price}`;
+    });
+
+    //Add the total
+    this.messageText += `\n\n*El Valor de la compra es de: COP* ${this.totalShopping}`;
+    this.phoneUser = "+573045811471";
+
+    //Encode the message to URI
+    let messageEncode = encodeURIComponent(this.messageText);
+
+    //Final URL
+    this.url = `${this.urlWhastapp}/${this.phoneUser}?text=${messageEncode}`;
   }
+
 }
