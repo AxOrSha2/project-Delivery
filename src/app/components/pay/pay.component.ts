@@ -65,7 +65,7 @@ export class PayComponent implements OnInit {
 
     //Add the total
     this.messageText += `\n\n*El Valor de la compra es de: COP* ${this.totalShopping}`;
-    this.phoneUser = "+573045811471";
+    this.phoneUser = "";
 
     //Encode the message to URI
     let messageEncode = encodeURIComponent(this.messageText);
